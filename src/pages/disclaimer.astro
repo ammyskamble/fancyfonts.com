@@ -1,0 +1,150 @@
+---
+// src/pages/disclaimer.astro - Legal & Unicode Compatibility Disclaimer
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Disclaimer ― FancyFonts.com | Compatibility & Trademark Notice"
+  description="Read the official Disclaimer for FancyFonts.com. Learn about Unicode cross-platform rendering, screen reader compatibility, and third-party trademark independence."
+  keywords="disclaimer, fancy fonts disclaimer, unicode compatibility, trademark notice, font rendering disclaimer"
+>
+  <Header />
+
+  <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-[var(--muted-foreground)] mb-8" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-purple-600 transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-[var(--foreground)] font-medium">Disclaimer</span>
+    </nav>
+
+    <!-- Header Title -->
+    <div class="mb-12">
+      <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20 inline-flex items-center gap-1.5 shadow-xs mb-3">
+        <span>⚠️</span> Legal & Technical Notice
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-[var(--foreground)] tracking-tight">
+        Disclaimer
+      </h1>
+      <p class="text-xs sm:text-sm text-[var(--muted-foreground)] mt-2">
+        Last Updated: September 6, 2026 • Effective Date: January 1, 2026
+      </p>
+    </div>
+
+    <!-- Quick Callout Box -->
+    <div class="mb-12 p-6 sm:p-8 rounded-3xl theme-panel border border-amber-500/30 bg-amber-500/5 shadow-xs">
+      <div class="flex items-start gap-4">
+        <span class="text-3xl flex-shrink-0">ℹ️</span>
+        <div>
+          <h2 class="text-lg font-bold text-[var(--foreground)]">Important Notice Regarding Unicode Text & Third-Party Platforms</h2>
+          <p class="text-sm text-[var(--muted-foreground)] mt-2 leading-relaxed">
+            FancyFonts.com provides automated mathematical and stylistic Unicode character mapping for creative personalization. We are an independent educational and utility website with no commercial affiliation or sponsorship with any third-party social media platform or gaming company.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disclaimer Content Sections -->
+    <div class="space-y-10 text-sm text-[var(--muted-foreground)] leading-relaxed">
+
+      <!-- Section 1 -->
+      <section class="rounded-2xl theme-panel border border-[var(--border)] p-6 sm:p-8 shadow-xs">
+        <h2 class="text-xl font-bold text-[var(--foreground)] mb-3 flex items-center gap-2">
+          <span>1.</span> General Informational & Utility Purpose
+        </h2>
+        <p class="mb-3">
+          The information, font generators, and Unicode transformation utilities provided on FancyFonts.com (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) are offered for general informational, recreational, and creative personalization purposes only.
+        </p>
+        <p>
+          While we make every effort to maintain accurate Unicode translations and flawless browser performance, all tools and materials on this site are provided on an &ldquo;as is&rdquo; and &ldquo;as available&rdquo; basis without warranties of any kind.
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="rounded-2xl theme-panel border border-[var(--border)] p-6 sm:p-8 shadow-xs">
+        <h2 class="text-xl font-bold text-[var(--foreground)] mb-3 flex items-center gap-2">
+          <span>2.</span> Unicode Rendering & Device Compatibility Disclaimer
+        </h2>
+        <p class="mb-3">
+          Our fonts are generated using standard Unicode character ranges (such as Mathematical Alphanumeric Symbols, Enclosed Alphanumerics, and Greek glyphs). How these characters appear to end users depends entirely on:
+        </p>
+        <ul class="list-disc pl-5 space-y-1.5 mb-4">
+          <li>The operating system version (iOS, Android, Windows, macOS, Linux, ChromeOS) of the viewing device.</li>
+          <li>The native system fonts installed on the recipient device.</li>
+          <li>Whether the receiving application or website allows custom Unicode input or sanitizes special characters.</li>
+        </ul>
+        <p>
+          On older operating systems or unsupported apps, certain decorative characters may render as unsupported boxes (&ldquo;tofu&rdquo; glyphs, e.g. □ or ). FancyFonts.com cannot guarantee universal rendering across all hardware, browsers, or software versions.
+        </p>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="rounded-2xl theme-panel border border-[var(--border)] p-6 sm:p-8 shadow-xs">
+        <h2 class="text-xl font-bold text-[var(--foreground)] mb-3 flex items-center gap-2">
+          <span>3.</span> Accessibility & Screen Reader Warning
+        </h2>
+        <p class="mb-3">
+          Assistive technologies such as screen readers (e.g., Apple VoiceOver, NVDA, JAWS) read Unicode mathematical alphanumeric symbols literally according to their Unicode technical designations. For instance, the script word <code>𝓕𝓪𝓷𝓬𝔂</code> may be announced by screen readers as <em>&ldquo;Mathematical Script Capital F, Mathematical Script Small A, Mathematical Script Small N...&rdquo;</em>.
+        </p>
+        <p>
+          For optimal accessibility compliance (WCAG), we recommend using fancy fonts sparingly for stylistic bios, short titles, and decorative accents, rather than entire paragraphs of critical informational text.
+        </p>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="rounded-2xl theme-panel border border-[var(--border)] p-6 sm:p-8 shadow-xs">
+        <h2 class="text-xl font-bold text-[var(--foreground)] mb-3 flex items-center gap-2">
+          <span>4.</span> Third-Party Trademarks & Independence
+        </h2>
+        <p class="mb-3">
+          All product names, logos, brands, trademarks, and registered trademarks mentioned on this website (including but not limited to <strong>Instagram, TikTok, Twitter / X, Discord, WhatsApp, YouTube, Facebook, Roblox, Fortnite, Minecraft, Apple, Google, Microsoft, and Dior</strong>) are property of their respective owners.
+        </p>
+        <p>
+          All company, product, and service names used on FancyFonts.com are for identification and compatibility demonstration purposes only. Use of these names, trademarks, and brands does not imply endorsement, affiliation, sponsorship, or association with FancyFonts.com.
+        </p>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="rounded-2xl theme-panel border border-[var(--border)] p-6 sm:p-8 shadow-xs">
+        <h2 class="text-xl font-bold text-[var(--foreground)] mb-3 flex items-center gap-2">
+          <span>5.</span> User-Generated Content & Third-Party Platform Rules
+        </h2>
+        <p class="mb-3">
+          You are solely responsible for where and how you paste fonts generated through our tool. Each external platform maintains its own Terms of Service, community standards, and username restrictions.
+        </p>
+        <p>
+          FancyFonts.com is not liable if an external platform restricts, deletes, or penalizes your profile, username, or message for using stylized Unicode characters or special symbols.
+        </p>
+      </section>
+
+      <!-- Section 6 -->
+      <section class="rounded-2xl theme-panel border border-[var(--border)] p-6 sm:p-8 shadow-xs">
+        <h2 class="text-xl font-bold text-[var(--foreground)] mb-3 flex items-center gap-2">
+          <span>6.</span> Limitation of Liability
+        </h2>
+        <p>
+          Under no circumstances shall FancyFonts.com, its operators, creators, or contributors be held liable for any direct, indirect, incidental, consequential, special, or exemplary damages arising out of or in connection with your access to, use of, or inability to use the website, generated characters, or external platform interactions.
+        </p>
+      </section>
+
+      <!-- Section 7 -->
+      <section class="rounded-2xl theme-panel border border-[var(--border)] p-6 sm:p-8 shadow-xs">
+        <h2 class="text-xl font-bold text-[var(--foreground)] mb-3 flex items-center gap-2">
+          <span>7.</span> Contacting Us
+        </h2>
+        <p class="mb-3">
+          If you have questions regarding this Disclaimer or wish to report a trademark or technical inquiry, please reach out:
+        </p>
+        <div class="mt-4 p-4 rounded-xl theme-well border border-[var(--border)] font-mono text-xs space-y-1">
+          <div>Email: <a href="mailto:legal@fancyfonts.com" class="text-purple-600 dark:text-purple-400 hover:underline">legal@fancyfonts.com</a></div>
+          <div>Contact Form: <a href="/contact/" class="text-purple-600 dark:text-purple-400 hover:underline">fancyfonts.com/contact/</a></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

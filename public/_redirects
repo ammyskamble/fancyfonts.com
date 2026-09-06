@@ -1,0 +1,17 @@
+# Cloudflare Pages Redirects for FancyFonts.com
+# Canonical 301 redirects to trailing slash canonical pages
+
+/privacy-policy /privacy/ 301
+/privacy-policy/ /privacy/ 301
+/terms-and-conditions /terms/ 301
+/terms-and-conditions/ /terms/ 301
+/terms-of-service /terms/ 301
+/terms-of-service/ /terms/ 301
+/tos /terms/ 301
+/tos/ /terms/ 301
+/about-us /about/ 301
+/about-us/ /about/ 301
+/contact-us /contact/ 301
+/contact-us/ /contact/ 301
+/legal /privacy/ 301
+/legal/ /privacy/ 301

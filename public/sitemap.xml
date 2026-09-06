@@ -14,13 +14,13 @@
 
   <!-- Informational & Educational Pages -->
   <url>
-    <loc>https://fancyfonts.com/about</loc>
+    <loc>https://fancyfonts.com/about/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fancyfonts.com/about-us</loc>
+    <loc>https://fancyfonts.com/about-us/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -28,13 +28,13 @@
 
   <!-- Contact & Feedback -->
   <url>
-    <loc>https://fancyfonts.com/contact</loc>
+    <loc>https://fancyfonts.com/contact/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fancyfonts.com/contact-us</loc>
+    <loc>https://fancyfonts.com/contact-us/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -42,28 +42,40 @@
 
   <!-- Legal & Trust Pages -->
   <url>
-    <loc>https://fancyfonts.com/privacy</loc>
+    <loc>https://fancyfonts.com/privacy/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fancyfonts.com/privacy-policy</loc>
+    <loc>https://fancyfonts.com/privacy-policy/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fancyfonts.com/terms</loc>
+    <loc>https://fancyfonts.com/terms/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fancyfonts.com/terms-and-conditions</loc>
+    <loc>https://fancyfonts.com/terms-and-conditions/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fancyfonts.com/terms-of-service/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fancyfonts.com/disclaimer/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>
