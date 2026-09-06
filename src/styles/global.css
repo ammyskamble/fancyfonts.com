@@ -1,0 +1,172 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+
+/* Class-based Dark Mode Variant for Tailwind CSS v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    /* Light Theme (Crisp, High Contrast, Modern) */
+    --background: #f8fafc;
+    --foreground: #0f172a;
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --border: #e2e8f0;
+    --input: #f1f5f9;
+    --ring: #7c3aed;
+
+    --primary: #7c3aed;
+    --primary-foreground: #ffffff;
+    --accent: #f5f3ff;
+    --accent-foreground: #6d28d9;
+    --success: #10b981;
+    --success-foreground: #ffffff;
+
+    --canvas-card: #ffffff;
+    --canvas-border: #e2e8f0;
+    --canvas-text: #0f172a;
+
+    --radius: 0.75rem;
+    --font-sans: 'Inter Variable', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, monospace;
+    color-scheme: light;
+  }
+
+  html.dark,
+  .dark {
+    /* Dark Theme (Deep Obsidian & Charcoal Zinc, Zero Stark White) */
+    --background: #09090b;
+    --foreground: #f4f4f5;
+    --card: #141417;
+    --card-foreground: #f4f4f5;
+    --muted: #1e1e24;
+    --muted-foreground: #a1a1aa;
+    --border: #27272a;
+    --input: #1e1e24;
+    --ring: #a855f7;
+
+    --primary: #a855f7;
+    --primary-foreground: #09090b;
+    --accent: #271842;
+    --accent-foreground: #d8b4fe;
+    --success: #34d399;
+    --success-foreground: #09090b;
+
+    --canvas-card: #141417;
+    --canvas-border: #27272a;
+    --canvas-text: #f4f4f5;
+
+    color-scheme: dark;
+  }
+
+  /* Specific Canvas Mode Overrides (used for font cards preview) */
+  .canvas-light {
+    --canvas-card: #ffffff !important;
+    --canvas-border: #e2e8f0 !important;
+    --canvas-text: #0f172a !important;
+  }
+
+  .canvas-dark {
+    --canvas-card: #141417 !important;
+    --canvas-border: #27272a !important;
+    --canvas-text: #f4f4f5 !important;
+  }
+
+  .canvas-amoled {
+    --canvas-card: #000000 !important;
+    --canvas-border: #222226 !important;
+    --canvas-text: #ffffff !important;
+  }
+
+  .canvas-contrast {
+    --canvas-card: #150d2a !important;
+    --canvas-border: #581c87 !important;
+    --canvas-text: #f3e8ff !important;
+  }
+
+  body {
+    background-color: var(--background) !important;
+    color: var(--foreground) !important;
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* Theme Utilities for bulletproof component coloring */
+.theme-panel {
+  background-color: var(--card) !important;
+  border-color: var(--border) !important;
+  color: var(--card-foreground) !important;
+}
+
+.theme-well {
+  background-color: var(--muted) !important;
+  border-color: var(--border) !important;
+  color: var(--foreground) !important;
+}
+
+.theme-font-card {
+  background-color: var(--canvas-card) !important;
+  border-color: var(--canvas-border) !important;
+  color: var(--canvas-text) !important;
+}
+
+/* Theme Toggle Icon visibility */
+.theme-sun-icon {
+  display: none !important;
+}
+.theme-moon-icon {
+  display: block !important;
+}
+html.dark .theme-sun-icon,
+.dark .theme-sun-icon {
+  display: block !important;
+}
+html.dark .theme-moon-icon,
+.dark .theme-moon-icon {
+  display: none !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  opacity: 0.4;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.7;
+}
+
+/* Custom Slider Styling */
+input[type="range"] {
+  accent-color: var(--primary);
+}
+
+/* Smooth card transitions */
+.font-card {
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.15s ease;
+}
+.font-card:hover {
+  transform: translateY(-2px);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.04); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite ease-in-out;
+}

@@ -1,0 +1,204 @@
+---
+// src/pages/about.astro - Modern, aesthetic About Us page
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="About Us ― FancyFonts.com | The Modern Unicode Typography Engine"
+  description="Learn the story and technology behind FancyFonts.com. Discover how our 100% client-side Unicode engine empowers creators with 55+ free aesthetic fancy fonts and cursive text."
+  keywords="about fancy fonts, unicode text generator, fancy font engine, font copy and paste story, cursive text generator, digital typography"
+>
+  <Header />
+
+  <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-[var(--muted-foreground)] mb-8" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-purple-600 transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-[var(--foreground)] font-medium">About Us</span>
+    </nav>
+
+    <!-- Hero Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 bg-purple-500/10 px-3.5 py-1.5 rounded-full border border-purple-500/20 inline-flex items-center gap-1.5 shadow-xs">
+        <span>✨</span> Our Story & Technology
+      </span>
+      <h1 class="text-3xl sm:text-5xl font-black text-[var(--foreground)] mt-4 tracking-tight">
+        Empowering Digital Self-Expression Through <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500">Modern Typography</span>
+      </h1>
+      <p class="text-base sm:text-lg text-[var(--muted-foreground)] mt-4 leading-relaxed">
+        FancyFonts.com was created to bring high-performance, privacy-focused, and beautifully designed typography tools to millions of creators, gamers, and writers worldwide.
+      </p>
+    </div>
+
+    <!-- Key Metrics / Highlights Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-16">
+      <div class="rounded-2xl p-6 theme-panel border border-[var(--border)] text-center shadow-xs">
+        <div class="text-3xl sm:text-4xl font-black text-purple-600 dark:text-purple-400">55+</div>
+        <div class="text-xs sm:text-sm font-semibold text-[var(--foreground)] mt-1">Font Styles</div>
+        <div class="text-[11px] text-[var(--muted-foreground)] mt-0.5">Real-time Unicode sets</div>
+      </div>
+      <div class="rounded-2xl p-6 theme-panel border border-[var(--border)] text-center shadow-xs">
+        <div class="text-3xl sm:text-4xl font-black text-indigo-600 dark:text-indigo-400">100%</div>
+        <div class="text-xs sm:text-sm font-semibold text-[var(--foreground)] mt-1">Client-Side</div>
+        <div class="text-[11px] text-[var(--muted-foreground)] mt-0.5">Zero keystroke logging</div>
+      </div>
+      <div class="rounded-2xl p-6 theme-panel border border-[var(--border)] text-center shadow-xs">
+        <div class="text-3xl sm:text-4xl font-black text-pink-600 dark:text-pink-400">&lt;1ms</div>
+        <div class="text-xs sm:text-sm font-semibold text-[var(--foreground)] mt-1">Conversion Latency</div>
+        <div class="text-[11px] text-[var(--muted-foreground)] mt-0.5">Keystroke-by-keystroke</div>
+      </div>
+      <div class="rounded-2xl p-6 theme-panel border border-[var(--border)] text-center shadow-xs">
+        <div class="text-3xl sm:text-4xl font-black text-emerald-600 dark:text-emerald-400">$0</div>
+        <div class="text-xs sm:text-sm font-semibold text-[var(--foreground)] mt-1">Free Forever</div>
+        <div class="text-[11px] text-[var(--muted-foreground)] mt-0.5">No ads or paywalls</div>
+      </div>
+    </div>
+
+    <!-- Our Mission & The Problem We Solved -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      <div class="rounded-3xl theme-panel border border-[var(--border)] p-8 shadow-xs flex flex-col justify-between">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-purple-500/15 text-purple-600 flex items-center justify-center text-xl mb-4">
+            🚀
+          </div>
+          <h2 class="text-2xl font-bold text-[var(--foreground)] mb-3">Our Mission</h2>
+          <p class="text-sm text-[var(--muted-foreground)] leading-relaxed mb-4">
+            In an era where digital communication happens across constrained social feeds, bios, and chat platforms, plain text can feel monolithic and impersonal. Our mission is to democratize artistic typography by making expressive, custom lettering instant and universally accessible.
+          </p>
+          <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+            Whether you are crafting a standout Instagram bio, configuring Discord role banners, styling gaming clan handles, or adding elegance to a message, FancyFonts.com gives you the tools to create in seconds.
+          </p>
+        </div>
+      </div>
+
+      <div class="rounded-3xl theme-panel border border-[var(--border)] p-8 shadow-xs flex flex-col justify-between">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/15 text-indigo-600 flex items-center justify-center text-xl mb-4">
+            ⚡
+          </div>
+          <h2 class="text-2xl font-bold text-[var(--foreground)] mb-3">The Problem We Solved</h2>
+          <p class="text-sm text-[var(--muted-foreground)] leading-relaxed mb-4">
+            The web has been flooded for years with clunky, outdated text generators plagued by intrusive popups, slow server-rendered refreshes, broken mobile interfaces, and tracking scripts.
+          </p>
+          <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+            We built FancyFonts.com with modern web principles: a clean design system, zero server dependencies for text processing, responsive touch targets, dark mode parity, and full privacy protection.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- How the Unicode Technology Works -->
+    <div class="rounded-3xl theme-panel border border-[var(--border)] p-8 sm:p-10 mb-16 shadow-xs">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20 inline-flex items-center gap-1.5 mb-3">
+          <span>🧠</span> Technical Architecture
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)] mb-4">
+          How Our Unicode Transformation Works
+        </h2>
+        <div class="space-y-4 text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed">
+          <p>
+            When you type into FancyFonts.com, no font files (.ttf or .otf) are installed on your device or transmitted to a remote server. Instead, our algorithmic engine leverages the <strong>Universal Coded Character Set (Unicode)</strong> standard.
+          </p>
+          <p>
+            Standard keyboard keys correspond to basic ASCII characters. However, the Unicode standard contains over 149,000 code points, including mathematical alphanumeric symbols, enclosed alphanumerics, fullwidth forms, and script glyphs.
+          </p>
+          <p>
+            Our client-side JavaScript engine maps each standard character code to its corresponding decorative counterpart in real time. Because these symbols are integral parts of the global Unicode standard, any app, operating system, or web platform that accepts text can display them flawlessly.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 pt-8 border-t border-[var(--border)]">
+        <div class="p-4 rounded-2xl theme-well border border-[var(--border)]">
+          <div class="font-bold text-sm text-[var(--foreground)] mb-1">Mathematical Plane</div>
+          <div class="text-xs text-[var(--muted-foreground)]">Powers Cursive (𝒻𝒶𝓃𝒸𝓎), Fraktur (𝖋𝖆𝖓𝖈𝖞), and Blackboard Bold (𝔽𝕒𝕟𝕔𝕪).</div>
+        </div>
+        <div class="p-4 rounded-2xl theme-well border border-[var(--border)]">
+          <div class="font-bold text-sm text-[var(--foreground)] mb-1">Enclosed Glyphs</div>
+          <div class="text-xs text-[var(--muted-foreground)]">Powers Circled Bubble text (Ⓕⓐⓝⓒⓨ) and Square Inverted badges.</div>
+        </div>
+        <div class="p-4 rounded-2xl theme-well border border-[var(--border)]">
+          <div class="font-bold text-sm text-[var(--foreground)] mb-1">Combining Characters</div>
+          <div class="text-xs text-[var(--muted-foreground)]">Powers Glitch/Zalgo void marks (F̶a̶n̶c̶y̶) and decorative accents.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Values -->
+    <div class="mb-16">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)]">
+          Our Guiding Principles
+        </h2>
+        <p class="text-sm text-[var(--muted-foreground)] mt-2">
+          Every decision we make is guided by four core values designed for users first.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="rounded-2xl p-6 theme-panel border border-[var(--border)] shadow-xs">
+          <div class="text-2xl mb-2">🔒</div>
+          <h3 class="font-bold text-base text-[var(--foreground)] mb-1">Absolute Privacy</h3>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed">
+            Your text is your own. We do not store, monitor, or transmit whatever you type into our generator. All transformations happen locally in your browser session.
+          </p>
+        </div>
+
+        <div class="rounded-2xl p-6 theme-panel border border-[var(--border)] shadow-xs">
+          <div class="text-2xl mb-2">⚡</div>
+          <h3 class="font-bold text-base text-[var(--foreground)] mb-1">Instantaneous Speed</h3>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed">
+            No loading spinners, no captcha barriers, and no server lags. Keystroke-level conversion ensures 55+ styles appear the microsecond you type.
+          </p>
+        </div>
+
+        <div class="rounded-2xl p-6 theme-panel border border-[var(--border)] shadow-xs">
+          <div class="text-2xl mb-2">🎨</div>
+          <h3 class="font-bold text-base text-[var(--foreground)] mb-1">Uncompromising Aesthetic</h3>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed">
+            We believe utility tools should look as clean and sleek as the content you are creating. Designed with high contrast, dark modes, and intuitive controls.
+          </p>
+        </div>
+
+        <div class="rounded-2xl p-6 theme-panel border border-[var(--border)] shadow-xs">
+          <div class="text-2xl mb-2">♿</div>
+          <h3 class="font-bold text-base text-[var(--foreground)] mb-1">Accessibility Awareness</h3>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed">
+            We advocate responsible typography and educate users on how screen readers interpret Unicode symbols, ensuring creative expression remains inclusive.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call To Action -->
+    <div class="p-8 sm:p-12 rounded-3xl theme-panel border border-purple-500/30 text-center relative overflow-hidden bg-gradient-to-r from-purple-500/10 via-indigo-500/10 to-pink-500/10">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)]">
+        Experience FancyFonts.com in Action
+      </h2>
+      <p class="text-sm sm:text-base text-[var(--muted-foreground)] mt-3 max-w-xl mx-auto">
+        Join millions of creators transforming ordinary words into memorable typography.
+      </p>
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
+        <a 
+          href="/" 
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold text-sm shadow-md hover:shadow-purple-500/25 hover:opacity-95 transition"
+        >
+          <span>Open Font Generator</span>
+          <span>→</span>
+        </a>
+        <a 
+          href="/contact" 
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl theme-panel border border-[var(--border)] text-[var(--foreground)] font-semibold text-sm hover:border-purple-500/40 transition"
+        >
+          <span>Contact the Team</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

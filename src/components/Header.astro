@@ -1,0 +1,100 @@
+---
+// Header.astro - Modern glassmorphic navigation bar using unified semantic theme tokens
+---
+
+<header class="sticky top-0 z-40 w-full border-b border-[var(--border)] theme-panel backdrop-blur-xl transition-colors">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    
+    <!-- Logo & Brand -->
+    <a href="/" class="flex items-center gap-2.5 group">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-purple-500/20 group-hover:scale-105 transition-transform">
+        𝓕
+      </div>
+      <div class="flex flex-col">
+        <span class="font-extrabold text-base tracking-tight text-[var(--foreground)] flex items-center gap-1.5">
+          FancyFonts<span class="text-purple-500">.com</span>
+        </span>
+        <span class="text-[10px] text-[var(--muted-foreground)] -mt-1 font-medium">
+          Unicode Font Generator
+        </span>
+      </div>
+    </a>
+
+    <!-- Middle Highlights & Stats Badge -->
+    <div class="hidden md:flex items-center gap-3">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-600 dark:text-purple-300 border border-purple-500/20">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        55+ Real-Time Styles
+      </span>
+      <span class="text-xs text-[var(--muted-foreground)]">•</span>
+      <span class="text-xs font-medium text-[var(--muted-foreground)]">
+        Zero Installation • Instant Copy & Paste
+      </span>
+    </div>
+
+    <!-- Right Controls: Theme Toggle & Quick Guide Link -->
+    <div class="flex items-center gap-3">
+      <a
+        href="/#guide"
+        class="hidden sm:inline-flex text-xs font-semibold text-[var(--muted-foreground)] hover:text-purple-500 px-3 py-1.5 rounded-lg hover:bg-[var(--muted)] transition-colors"
+      >
+        How It Works
+      </a>
+
+      <a
+        href="/#faq"
+        class="hidden sm:inline-flex text-xs font-semibold text-[var(--muted-foreground)] hover:text-purple-500 px-3 py-1.5 rounded-lg hover:bg-[var(--muted)] transition-colors"
+      >
+        FAQ
+      </a>
+
+      <a
+        href="/about"
+        class="hidden md:inline-flex text-xs font-semibold text-[var(--muted-foreground)] hover:text-purple-500 px-3 py-1.5 rounded-lg hover:bg-[var(--muted)] transition-colors"
+      >
+        About
+      </a>
+
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Toggle dark or light theme"
+        title="Toggle Theme"
+        class="p-2 rounded-xl border border-[var(--border)] theme-well text-[var(--foreground)] hover:border-purple-500/50 transition-colors cursor-pointer"
+      >
+        <!-- Sun Icon (visible in dark mode) -->
+        <svg class="w-4 h-4 theme-sun-icon text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <!-- Moon Icon (visible in light mode) -->
+        <svg class="w-4 h-4 theme-moon-icon text-neutral-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  // Theme Toggle functionality
+  function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle || themeToggle.dataset.initialized) return;
+    themeToggle.dataset.initialized = 'true';
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      window.dispatchEvent(new CustomEvent('theme-change', { detail: { theme: isDark ? 'light' : 'dark' } }));
+    });
+  }
+
+  initThemeToggle();
+  document.addEventListener('astro:after-swap', initThemeToggle);
+</script>

@@ -1,0 +1,88 @@
+---
+// src/pages/404.astro - High-impact, creative 404 error page
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="404: Page Not Found ― FancyFonts.com"
+  description="The requested page could not be found. Return to FancyFonts.com to generate 55+ aesthetic fancy fonts and cursive text."
+  robots="noindex, nofollow"
+>
+  <Header />
+
+  <main class="flex-grow flex items-center justify-center py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-xl mx-auto text-center">
+      
+      <!-- Glitch / Void Pill -->
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono font-bold bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/20 shadow-xs mb-6">
+        <span class="w-2 h-2 rounded-full bg-pink-500 animate-ping"></span>
+        <span>ERROR 404 • UNICODE_VOID</span>
+      </span>
+
+      <!-- Massive Styled 404 Headline -->
+      <div class="text-7xl sm:text-9xl font-black tracking-tight select-none">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500">
+          404
+        </span>
+      </div>
+
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)] mt-4 tracking-tight">
+        Character Not Found in the Plane
+      </h1>
+
+      <p class="text-sm sm:text-base text-[var(--muted-foreground)] mt-3 leading-relaxed max-w-md mx-auto">
+        Looks like this page fell outside our mapped Unicode blocks. It may have been moved, renamed, or deleted.
+      </p>
+
+      <!-- Decorative Font Cards Showcase -->
+      <div class="grid grid-cols-2 gap-3 my-8 text-left">
+        <div class="p-3 rounded-xl theme-panel border border-[var(--border)] shadow-xs">
+          <div class="text-[10px] uppercase font-bold text-purple-600 dark:text-purple-400">Gothic Fraktur</div>
+          <div class="font-mono text-sm text-[var(--foreground)] mt-1">𝟒𝟎𝟒 𝕹𝖔𝖙 𝕱𝖔𝖚𝖓𝖉</div>
+        </div>
+        <div class="p-3 rounded-xl theme-panel border border-[var(--border)] shadow-xs">
+          <div class="text-[10px] uppercase font-bold text-indigo-600 dark:text-indigo-400">Double-Struck</div>
+          <div class="font-mono text-sm text-[var(--foreground)] mt-1">𝟜𝟘𝟜 ℕ𝕠𝕥 𝔽𝕠𝕦𝕟𝕕</div>
+        </div>
+        <div class="p-3 rounded-xl theme-panel border border-[var(--border)] shadow-xs">
+          <div class="text-[10px] uppercase font-bold text-pink-600 dark:text-pink-400">Circled Bubble</div>
+          <div class="font-mono text-sm text-[var(--foreground)] mt-1">➃⓪➃ Ⓝⓞⓣ Ⓕⓞⓤⓝⓓ</div>
+        </div>
+        <div class="p-3 rounded-xl theme-panel border border-[var(--border)] shadow-xs">
+          <div class="text-[10px] uppercase font-bold text-amber-600 dark:text-amber-400">Cursive Script</div>
+          <div class="font-mono text-sm text-[var(--foreground)] mt-1">𝟜𝟘𝟜 𝒩ℴ𝓉 ℱℴ𝓊𝓃𝒹</div>
+        </div>
+      </div>
+
+      <!-- Action Navigation Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <a 
+          href="/" 
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold text-sm shadow-md hover:shadow-purple-500/25 hover:opacity-95 transition cursor-pointer"
+        >
+          <span>Back to Generator</span>
+          <span>🏠</span>
+        </a>
+        <a 
+          href="/#faq" 
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl theme-panel border border-[var(--border)] text-[var(--foreground)] font-semibold text-sm hover:border-purple-500/40 transition cursor-pointer"
+        >
+          <span>Browse 17 FAQs</span>
+          <span>❓</span>
+        </a>
+        <a 
+          href="/contact" 
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl theme-panel border border-[var(--border)] text-[var(--foreground)] font-semibold text-sm hover:border-purple-500/40 transition cursor-pointer"
+        >
+          <span>Report Issue</span>
+          <span>✉️</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

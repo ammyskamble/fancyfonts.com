@@ -1,0 +1,153 @@
+---
+// Layout.astro - Main Layout with full SEO metadata, Schema.org JSON-LD, and theme script
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  robots?: string;
+  showFaqSchema?: boolean;
+}
+
+const {
+  title = "Fancy Fonts Generator ― 55+ Free Fancy Text & Font Copy and Paste",
+  description = "Free fancy fonts generator: transform text into 55+ aesthetic fancy fonts, cursive letters copy and paste, and gothic font styles. Instant 1-click font copy and paste.",
+  keywords = "fancy fonts generator, fancy text generator, text generator, fancy fonts generator copy and paste, fancy fonts, free fancy fonts, fancy fonts free, fancy letters, fancy lettering, fancy lettering alphabet, font copy and paste, copy and paste font, fancy font copy and paste, letter fonts, cursive letters copy and paste, gothic font copy and paste, cursive font copy and paste",
+  image = "/og-image.png",
+  robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  showFaqSchema = false
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://fancyfonts.com');
+const ogImageURL = new URL(image, Astro.site || 'https://fancyfonts.com');
+
+const jsonLdApp = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Fancy Fonts Generator",
+  "alternateName": [
+    "Fancy Text Generator",
+    "Font Copy and Paste Tool",
+    "Free Fancy Fonts Generator"
+  ],
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript. Requires HTML5.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": description,
+  "url": "https://fancyfonts.com",
+  "image": ogImageURL.toString(),
+  "featureList": [
+    "55+ Real-Time Unicode Fancy Fonts",
+    "Cursive Letters Copy and Paste",
+    "Gothic Font Copy and Paste",
+    "Fancy Lettering Alphabet A-Z",
+    "Live Font Size Scaling Slider",
+    "One-Click Clipboard Copy and Paste",
+    "Aesthetic Decorators & Border Wrappers",
+    "Dark & Light Mode Canvas"
+  ]
+};
+
+const jsonLdWebSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "FancyFonts.com",
+  "alternateName": "Fancy Fonts Generator",
+  "url": "https://fancyfonts.com",
+  "description": description,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://fancyfonts.com/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
+
+import { faqs } from '../data/faqs';
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answerHtml
+    }
+  }))
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" title="Sitemap Index" href="/sitemap-index.xml" />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="FancyFonts.com" />
+    <meta name="robots" content={robots} />
+    <meta name="googlebot" content={robots} />
+    <meta name="theme-color" content="#7c3aed" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="FancyFonts.com" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:secure_url" content={ogImageURL} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Fancy Fonts Generator - Free Fancy Text and Font Copy and Paste" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@fancyfonts" />
+    <meta name="twitter:creator" content="@fancyfonts" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+    <meta name="twitter:image:alt" content="Fancy Fonts Generator - Free Fancy Text and Font Copy and Paste" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdApp)} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdWebSite)} />
+    {showFaqSchema && <script type="application/ld+json" set:html={JSON.stringify(jsonLdFaq)} />}
+
+    <!-- Theme Initialization Script (Prevents Flash of Light/Dark Mode) -->
+    <script is:inline>
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col bg-[var(--background)] text-[var(--foreground)] selection:bg-purple-500 selection:text-white">
+    <slot />
+  </body>
+</html>

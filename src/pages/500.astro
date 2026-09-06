@@ -1,0 +1,80 @@
+---
+// src/pages/500.astro - Clean, informative 500 Server Error page
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="500: Server Error ― FancyFonts.com"
+  description="An unexpected server error occurred. Please try refreshing or return to the FancyFonts.com homepage."
+  robots="noindex, nofollow"
+>
+  <Header />
+
+  <main class="flex-grow flex items-center justify-center py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-xl mx-auto text-center">
+      
+      <!-- Warning Pill -->
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 shadow-xs mb-6">
+        <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+        <span>ERROR 500 • INTERNAL_SERVER_EXCEPTION</span>
+      </span>
+
+      <!-- Massive 500 Headline -->
+      <div class="text-7xl sm:text-9xl font-black tracking-tight select-none">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600">
+          500
+        </span>
+      </div>
+
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)] mt-4 tracking-tight">
+        Something Went Wrong
+      </h1>
+
+      <p class="text-sm sm:text-base text-[var(--muted-foreground)] mt-3 leading-relaxed max-w-md mx-auto">
+        We encountered an unexpected error while processing this request. Don't worry, our client-side font generator is still functioning normally.
+      </p>
+
+      <!-- Diagnostic Card -->
+      <div class="my-8 p-5 rounded-2xl theme-well border border-[var(--border)] text-left shadow-xs">
+        <div class="flex items-center justify-between text-xs text-[var(--muted-foreground)] mb-2">
+          <span class="font-mono font-semibold text-[var(--foreground)]">System Diagnostics</span>
+          <span class="text-emerald-600 dark:text-emerald-400 font-bold">Client Engine: Normal</span>
+        </div>
+        <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+          Because FancyFonts.com executes typography conversion locally in your browser, you can continue generating cursive and gothic fonts without interruption by returning home.
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <button 
+          type="button" 
+          onclick="window.location.reload();"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold text-sm shadow-md hover:shadow-purple-500/25 hover:opacity-95 transition cursor-pointer"
+        >
+          <span>Reload Page</span>
+          <span>🔄</span>
+        </button>
+        <a 
+          href="/" 
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl theme-panel border border-[var(--border)] text-[var(--foreground)] font-semibold text-sm hover:border-purple-500/40 transition cursor-pointer"
+        >
+          <span>Return to Homepage</span>
+          <span>🏠</span>
+        </a>
+        <a 
+          href="/contact" 
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl theme-panel border border-[var(--border)] text-[var(--foreground)] font-semibold text-sm hover:border-purple-500/40 transition cursor-pointer"
+        >
+          <span>Contact Support</span>
+          <span>✉️</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

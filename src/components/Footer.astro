@@ -1,0 +1,85 @@
+---
+// Footer.astro - Clean footer with categorized directory links & semantic theme tokens
+---
+
+<footer class="border-t border-[var(--border)] theme-panel py-12 transition-colors">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      
+      <!-- Col 1: Brand Info -->
+      <div class="space-y-3">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center text-white font-bold text-sm">
+            𝓕
+          </div>
+          <span class="font-extrabold text-sm tracking-tight text-[var(--foreground)]">
+            FancyFonts<span class="text-purple-500">.com</span>
+          </span>
+        </div>
+        <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+          The fastest real-time Unicode fancy font and text generator. Transform plain text into stylish fonts for Instagram, TikTok, Discord, and WhatsApp.
+        </p>
+        <p class="text-[11px] text-[var(--muted-foreground)]">
+          © {new Date().getFullYear()} FancyFonts.com. All rights reserved.
+        </p>
+      </div>
+
+      <!-- Col 2: Font Categories -->
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-[var(--foreground)] mb-3">
+          Popular Styles
+        </h4>
+        <ul class="space-y-2 text-xs text-[var(--muted-foreground)]">
+          <li><a href="#" class="hover:text-purple-500 transition-colors">Cursive & Script (𝓕𝓪𝓷𝓬𝔂)</a></li>
+          <li><a href="#" class="hover:text-purple-500 transition-colors">Gothic Fraktur (𝕱𝖆𝖓𝖈𝖞)</a></li>
+          <li><a href="#" class="hover:text-purple-500 transition-colors">Double-Struck Blackboard (𝔽𝕒𝕟𝕔𝕪)</a></li>
+          <li><a href="#" class="hover:text-purple-500 transition-colors">Small Capitals (ꜰᴀɴᴄʏ)</a></li>
+          <li><a href="#" class="hover:text-purple-500 transition-colors">Circled Bubble Text (Ⓕⓐⓝⓒⓨ)</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Social & Gaming Guides -->
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-[var(--foreground)] mb-3">
+          Guides & FAQ
+        </h4>
+        <ul class="space-y-2 text-xs text-[var(--muted-foreground)]">
+          <li><a href="/#guide" class="hover:text-purple-500 transition-colors">Instagram Bio Fonts</a></li>
+          <li><a href="/#guide" class="hover:text-purple-500 transition-colors">TikTok Caption Fonts</a></li>
+          <li><a href="/#guide" class="hover:text-purple-500 transition-colors">Discord Nicknames & Roles</a></li>
+          <li><a href="/#guide" class="hover:text-purple-500 transition-colors">Roblox & Fortnite Tags</a></li>
+          <li><a href="/#faq" class="hover:text-purple-500 font-semibold text-purple-600 dark:text-purple-400 transition-colors">17 Common FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Legal & Company -->
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-[var(--foreground)] mb-3">
+          Company & Legal
+        </h4>
+        <ul class="space-y-2 text-xs text-[var(--muted-foreground)]">
+          <li><a href="/about" class="hover:text-purple-500 transition-colors">About Us</a></li>
+          <li><a href="/contact" class="hover:text-purple-500 transition-colors">Contact Us</a></li>
+          <li><a href="/privacy" class="hover:text-purple-500 transition-colors">Privacy Policy</a></li>
+          <li><a href="/terms" class="hover:text-purple-500 transition-colors">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Legal Bar & Disclaimer -->
+    <div class="pt-6 border-t border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[var(--muted-foreground)] leading-relaxed">
+      <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+        <a href="/about" class="hover:text-[var(--foreground)] transition-colors">About Us</a>
+        <span>•</span>
+        <a href="/contact" class="hover:text-[var(--foreground)] transition-colors">Contact Us</a>
+        <span>•</span>
+        <a href="/privacy" class="hover:text-[var(--foreground)] transition-colors">Privacy Policy</a>
+        <span>•</span>
+        <a href="/terms" class="hover:text-[var(--foreground)] transition-colors">Terms of Service</a>
+      </div>
+      <div>
+        FancyFonts.com utilizes standard Unicode characters. Social platforms mentioned are trademarks of their respective owners.
+      </div>
+    </div>
+  </div>
+</footer>

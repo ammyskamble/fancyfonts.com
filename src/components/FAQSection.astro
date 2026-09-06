@@ -1,0 +1,346 @@
+---
+// FAQSection.astro - High-impact, SEO-optimized FAQ component with Microdata, interactive search & filter
+import { faqs } from '../data/faqs';
+---
+
+<section 
+  id="faq" 
+  class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-[var(--border)]"
+  itemscope 
+  itemtype="https://schema.org/FAQPage"
+>
+  <!-- FAQ Header -->
+  <div class="text-center max-w-3xl mx-auto mb-12">
+    <span class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 bg-purple-500/10 px-3.5 py-1.5 rounded-full border border-purple-500/20 inline-flex items-center gap-1.5 shadow-xs">
+      <span>❓</span> Frequently Asked Questions
+    </span>
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-[var(--foreground)] mt-4 tracking-tight">
+      Frequently Asked Questions About Fancy Fonts
+    </h2>
+    <p class="text-base text-[var(--muted-foreground)] mt-3 leading-relaxed">
+      Everything you need to know about our free <strong>fancy text generator</strong>, Unicode encoding, <strong>cursive letters copy and paste</strong>, gothic fonts, and viral typographic trends.
+    </p>
+  </div>
+
+  <!-- Interactive Controls: Live Search & Category Filter -->
+  <div class="max-w-3xl mx-auto mb-8 space-y-4">
+    <!-- Live Search Input -->
+    <div class="relative">
+      <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[var(--muted-foreground)]">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+      <input 
+        type="text" 
+        id="faq-search-input"
+        placeholder="Search questions (e.g. Dior, Gothic, Cursive, Gen Z, 47)..." 
+        class="w-full pl-10 pr-4 py-3 text-sm rounded-xl theme-panel border border-[var(--border)] text-[var(--foreground)] placeholder-[var(--muted-foreground)] focus:outline-none focus:ring-2 focus:ring-purple-500 transition shadow-xs"
+        aria-label="Search frequently asked questions"
+      />
+      <button 
+        id="faq-search-clear" 
+        type="button" 
+        class="hidden absolute inset-y-0 right-0 pr-3.5 flex items-center text-xs text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
+      >
+        Clear
+      </button>
+    </div>
+
+    <!-- Category Filter Pills -->
+    <div class="flex flex-wrap items-center justify-center gap-2 pt-1" id="faq-filter-pills">
+      <button 
+        type="button" 
+        data-filter="all"
+        class="faq-pill active-pill text-xs font-semibold px-3 py-1.5 rounded-full transition cursor-pointer border border-purple-500/30 bg-purple-500/15 text-purple-600 dark:text-purple-300"
+      >
+        All Questions ({faqs.length})
+      </button>
+      <button 
+        type="button" 
+        data-filter="generator"
+        class="faq-pill text-xs font-medium px-3 py-1.5 rounded-full transition cursor-pointer border border-[var(--border)] theme-panel text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:border-purple-500/30"
+      >
+        Generators & How-To
+      </button>
+      <button 
+        type="button" 
+        data-filter="cursive"
+        class="faq-pill text-xs font-medium px-3 py-1.5 rounded-full transition cursor-pointer border border-[var(--border)] theme-panel text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:border-purple-500/30"
+      >
+        Cursive & Script
+      </button>
+      <button 
+        type="button" 
+        data-filter="gothic"
+        class="faq-pill text-xs font-medium px-3 py-1.5 rounded-full transition cursor-pointer border border-[var(--border)] theme-panel text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:border-purple-500/30"
+      >
+        Gothic & Blackletter
+      </button>
+      <button 
+        type="button" 
+        data-filter="trends"
+        class="faq-pill text-xs font-medium px-3 py-1.5 rounded-full transition cursor-pointer border border-[var(--border)] theme-panel text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:border-purple-500/30"
+      >
+        Trends, Dior & Culture
+      </button>
+    </div>
+  </div>
+
+  <!-- FAQ Accordion Container -->
+  <div class="max-w-3xl mx-auto space-y-3.5" id="faq-accordion-list">
+    {faqs.map((faq, index) => (
+      <details 
+        class="faq-item group rounded-2xl theme-panel border border-[var(--border)] p-5 transition-all shadow-xs hover:border-purple-500/40"
+        data-category={faq.category}
+        data-id={faq.id}
+        open={index === 0}
+        itemscope 
+        itemprop="mainEntity" 
+        itemtype="https://schema.org/Question"
+      >
+        <summary class="flex justify-between items-start gap-4 cursor-pointer list-none select-none">
+          <div class="flex items-start gap-3 flex-1">
+            <span class="text-xl flex-shrink-0 mt-0.5" aria-hidden="true">{faq.icon}</span>
+            <div class="flex flex-col">
+              <span class="text-xs font-semibold text-purple-600 dark:text-purple-400 mb-0.5 tracking-wide uppercase">
+                {faq.categoryLabel}
+              </span>
+              <h3 
+                class="font-semibold text-base sm:text-lg text-[var(--foreground)] group-hover:text-purple-600 dark:group-hover:text-purple-400 transition"
+                itemprop="name"
+              >
+                {faq.question}
+              </h3>
+            </div>
+          </div>
+          <span 
+            class="flex-shrink-0 w-7 h-7 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-600 dark:text-purple-400 text-xs transition-transform duration-200 group-open:rotate-180 border border-purple-500/20"
+            aria-hidden="true"
+          >
+            ▼
+          </span>
+        </summary>
+        
+        <div 
+          class="faq-answer-content mt-4 pt-4 border-t border-[var(--border)] text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed space-y-3"
+          itemscope 
+          itemprop="acceptedAnswer" 
+          itemtype="https://schema.org/Answer"
+        >
+          <div itemprop="text" set:html={faq.answerHtml} class="faq-prose" />
+
+          <!-- Quick Action: Copy Answer -->
+          <div class="pt-2 flex items-center justify-between text-xs">
+            <button 
+              type="button" 
+              class="copy-answer-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--border)] theme-panel text-[var(--muted-foreground)] hover:text-purple-600 dark:hover:text-purple-400 hover:border-purple-500/40 transition cursor-pointer"
+              data-text={faq.answerText}
+            >
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+              </svg>
+              <span>Copy Answer</span>
+            </button>
+            <span class="text-xs text-[var(--muted-foreground)]/70">
+              Unicode Standard Compliant
+            </span>
+          </div>
+        </div>
+      </details>
+    ))}
+
+    <!-- Empty State for Search -->
+    <div id="faq-empty-state" class="hidden text-center py-12 px-4 rounded-2xl theme-panel border border-[var(--border)]">
+      <div class="text-4xl mb-3">🔍</div>
+      <p class="font-semibold text-[var(--foreground)]">No matching questions found</p>
+      <p class="text-xs text-[var(--muted-foreground)] mt-1">Try another keyword like "cursive", "gothic", "dior", or "copy".</p>
+      <button 
+        type="button" 
+        id="faq-reset-btn"
+        class="mt-4 inline-flex items-center px-4 py-2 text-xs font-semibold rounded-xl bg-purple-600 text-white hover:bg-purple-700 transition"
+      >
+        View All Questions
+      </button>
+    </div>
+  </div>
+
+  <!-- Bottom CTA: Try Generator -->
+  <div class="mt-12 max-w-3xl mx-auto p-6 sm:p-8 rounded-3xl theme-panel border border-purple-500/30 text-center relative overflow-hidden bg-gradient-to-r from-purple-500/5 via-indigo-500/5 to-pink-500/5">
+    <div class="relative z-10">
+      <h3 class="text-xl sm:text-2xl font-bold text-[var(--foreground)]">
+        Ready to Transform Your Text?
+      </h3>
+      <p class="text-sm text-[var(--muted-foreground)] mt-2 max-w-xl mx-auto">
+        Test all 55+ aesthetic fancy fonts, cursive scripts, and gothic blackletter styles directly in our live generator.
+      </p>
+      <a 
+        href="#" 
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" 
+        class="mt-5 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold text-sm shadow-md hover:shadow-purple-500/25 hover:opacity-95 transition"
+      >
+        <span>Generate Fancy Fonts Now</span>
+        <span>↑</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-prose :global(p) {
+    margin-bottom: 0.75rem;
+    line-height: 1.625;
+  }
+  .faq-prose :global(p:last-child) {
+    margin-bottom: 0;
+  }
+  .faq-prose :global(ul),
+  .faq-prose :global(ol) {
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+  }
+  .faq-prose :global(ul) {
+    list-style-type: disc;
+  }
+  .faq-prose :global(ol) {
+    list-style-type: decimal;
+  }
+  .faq-prose :global(li) {
+    margin-bottom: 0.35rem;
+    line-height: 1.55;
+  }
+  .faq-prose :global(strong) {
+    color: var(--foreground);
+    font-weight: 600;
+  }
+  .faq-prose :global(code) {
+    background: rgba(168, 85, 247, 0.1);
+    color: #a855f7;
+    padding: 0.15rem 0.35rem;
+    border-radius: 0.375rem;
+    font-size: 0.85em;
+    font-family: var(--font-mono);
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('faq-search-input');
+    const searchClear = document.getElementById('faq-search-clear');
+    const filterPills = document.querySelectorAll('#faq-filter-pills .faq-pill');
+    const faqItems = document.querySelectorAll('#faq-accordion-list .faq-item');
+    const emptyState = document.getElementById('faq-empty-state');
+    const resetBtn = document.getElementById('faq-reset-btn');
+
+    let currentCategory = 'all';
+    let currentQuery = '';
+
+    function filterFaqs() {
+      let visibleCount = 0;
+      const q = currentQuery.trim().toLowerCase();
+
+      faqItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        const textContent = item.textContent.toLowerCase();
+
+        const matchesCat = currentCategory === 'all' || itemCategory === currentCategory;
+        const matchesQuery = !q || textContent.includes(q);
+
+        if (matchesCat && matchesQuery) {
+          item.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      if (emptyState) {
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+        } else {
+          emptyState.classList.add('hidden');
+        }
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = e.target.value;
+        if (searchClear) {
+          if (currentQuery) {
+            searchClear.classList.remove('hidden');
+          } else {
+            searchClear.classList.add('hidden');
+          }
+        }
+        filterFaqs();
+      });
+    }
+
+    if (searchClear && searchInput) {
+      searchClear.addEventListener('click', () => {
+        searchInput.value = '';
+        currentQuery = '';
+        searchClear.classList.add('hidden');
+        searchInput.focus();
+        filterFaqs();
+      });
+    }
+
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => {
+          p.classList.remove('active-pill', 'bg-purple-500/15', 'text-purple-600', 'dark:text-purple-300', 'border-purple-500/30');
+          p.classList.add('text-[var(--muted-foreground)]', 'border-[var(--border)]');
+        });
+
+        pill.classList.remove('text-[var(--muted-foreground)]', 'border-[var(--border)]');
+        pill.classList.add('active-pill', 'bg-purple-500/15', 'text-purple-600', 'dark:text-purple-300', 'border-purple-500/30');
+
+        currentCategory = pill.getAttribute('data-filter') || 'all';
+        filterFaqs();
+      });
+    });
+
+    if (resetBtn && searchInput) {
+      resetBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        currentQuery = '';
+        if (searchClear) searchClear.classList.add('hidden');
+        currentCategory = 'all';
+        filterPills.forEach(p => {
+          if (p.getAttribute('data-filter') === 'all') {
+            p.click();
+          }
+        });
+        filterFaqs();
+      });
+    }
+
+    // Copy Answer Button functionality
+    const copyBtns = document.querySelectorAll('.copy-answer-btn');
+    copyBtns.forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const textToCopy = btn.getAttribute('data-text');
+        if (!textToCopy) return;
+
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+          const span = btn.querySelector('span');
+          const originalText = span ? span.textContent : 'Copy Answer';
+          if (span) span.textContent = 'Copied!';
+          btn.classList.add('text-green-600', 'dark:text-green-400', 'border-green-500/40');
+
+          setTimeout(() => {
+            if (span) span.textContent = originalText;
+            btn.classList.remove('text-green-600', 'dark:text-green-400', 'border-green-500/40');
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy: ', err);
+        }
+      });
+    });
+  });
+</script>
