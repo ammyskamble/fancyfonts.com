@@ -52,8 +52,8 @@ Allow: /
 # -------------------------------------------------------------
 # Sitemaps & Host Declaration
 # -------------------------------------------------------------
-Sitemap: https://fancyfonts.com/sitemap.xml
-Sitemap: https://fancyfonts.com/sitemap-index.xml
-Sitemap: https://fancyfonts.com/sitemap-0.xml
+Sitemap: https://fancyfonts-23k.pages.dev/sitemap.xml
+Sitemap: https://fancyfonts-23k.pages.dev/sitemap-index.xml
+Sitemap: https://fancyfonts-23k.pages.dev/sitemap-0.xml
 
-Host: https://fancyfonts.com
+Host: https://fancyfonts-23k.pages.dev

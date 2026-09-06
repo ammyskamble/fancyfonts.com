@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://fancyfonts.com',
+  site: 'https://fancyfonts-23k.pages.dev',
   trailingSlash: 'always',
   build: {
     inlineStylesheets: 'always'
@@ -18,7 +18,7 @@ export default defineConfig({
     react(),
     sitemap({
       serialize(item) {
-        if (item.url === 'https://fancyfonts.com/' || item.url === 'https://fancyfonts.com') {
+        if (item.url === 'https://fancyfonts-23k.pages.dev/' || item.url === 'https://fancyfonts-23k.pages.dev') {
           item.priority = 1.0;
           item.changefreq = 'daily';
         } else if (item.url.includes('/about') || item.url.includes('/contact')) {

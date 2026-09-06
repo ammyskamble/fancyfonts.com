@@ -20,8 +20,9 @@ const {
   showFaqSchema = false
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://fancyfonts.com');
-const ogImageURL = new URL(image, Astro.site || 'https://fancyfonts.com');
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://fancyfonts-23k.pages.dev';
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const ogImageURL = new URL(image, siteUrl);
 
 const jsonLdApp = {
   "@context": "https://schema.org",
@@ -41,7 +42,7 @@ const jsonLdApp = {
     "priceCurrency": "USD"
   },
   "description": description,
-  "url": "https://fancyfonts.com",
+  "url": siteUrl,
   "image": ogImageURL.toString(),
   "featureList": [
     "55+ Real-Time Unicode Fancy Fonts",
@@ -58,15 +59,15 @@ const jsonLdApp = {
 const jsonLdWebSite = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "FancyFonts.com",
-  "alternateName": "Fancy Fonts Generator",
-  "url": "https://fancyfonts.com",
+  "name": "Fancy Fonts Generator",
+  "alternateName": "FancyFonts",
+  "url": siteUrl,
   "description": description,
   "potentialAction": {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://fancyfonts.com/?q={search_term_string}"
+      "urlTemplate": `${siteUrl}/?q={search_term_string}`
     },
     "query-input": "required name=search_term_string"
   }
