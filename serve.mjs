@@ -54,8 +54,26 @@ const server = http.createServer((req, res) => {
       'Content-Type': contentType,
       'Cache-Control': 'no-cache, no-store, must-revalidate'
     });
-    fs.createReadStream(filePath).pipe(res);
+    const stream = fs.createReadStream(filePath);
+    stream.on('error', (err) => {
+      if (!res.headersSent) {
+        res.writeHead(500, { 'Content-Type': 'text/plain' });
+      }
+      res.end();
+    });
+    res.on('error', () => {
+      stream.destroy();
+    });
+    stream.pipe(res);
   });
+});
+
+server.on('error', (err) => {
+  console.error('Server error:', err);
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught exception ignored:', err.message);
 });
 
 server.listen(PORT, '0.0.0.0', () => {
