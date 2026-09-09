@@ -15,3 +15,8 @@
 /contact-us/ /contact/ 301
 /legal /privacy/ 301
 /legal/ /privacy/ 301
+
+# Sitemaps
+/sitemap /sitemap.xml 301
+/sitemap/ /sitemap.xml 301
+/sitemap_index.xml /sitemap-index.xml 301
